@@ -7,11 +7,14 @@ class Ground {
       this.width = width;
       this.height = height;
       World.add(world, this.body);
+      this.image = loadImage("sprites/ground.png");
     }
     display(){
       var pos =this.body.position;
-      rectMode(CENTER);
+      push();
+      imageMode(CENTER);
       fill("brown");
-      rect(pos.x, pos.y, this.width, this.height);
+      image(this.image,pos.x, pos.y, this.width, this.height);
+      pop();
     }
   };
